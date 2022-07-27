@@ -14,7 +14,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
+    <header>
+        <h1 class="text-center text-6xl m-10 text-red-600 ">BLOG LARAVEL</h1>
+    </header>
         <div class="font-sans text-gray-900 antialiased">
+
             {{ $slot }}
         </div>
     </body>
