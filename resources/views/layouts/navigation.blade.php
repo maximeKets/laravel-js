@@ -35,7 +35,7 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
-                        <x-dropdown-link :href="route('crudArticle')">
+                        <x-dropdown-link :href="route('dashboard')">
                             {{ __('Modifier Article') }}
                         </x-dropdown-link>
 
@@ -81,7 +81,7 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Authentication -->
-                <x-dropdown-link :href="route('crudArticle')">
+                <x-dropdown-link :href="route('dashboard')">
                     {{ __('Modifier Article') }}
                 </x-dropdown-link>
                 <form method="POST" action="{{ route('logout') }}">

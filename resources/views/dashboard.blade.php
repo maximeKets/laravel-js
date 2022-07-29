@@ -9,9 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <h1>Hello {{Auth::user()->name }}, La pèche ?</h1>
+                    <h1>Hello {{Auth::user()->firstname }}, La pèche ? on fait quoi aujourd'hui : </h1>
                     <br/>
-                    <a href="{{'/CRUD'}}">Modifier Articles</a>
+                    <a href="{{'dashboard/article'}}">Modifier Articles</a>
                 </div>
             </div>
         </div>

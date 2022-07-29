@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CRUDarticle;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,13 +16,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-Route::get('/{article}', [HomeController::class, 'show'])->name('article');
-Route::post('/post', [HomeController::class, 'store'])->name('article');
-
+Route::get('/article/{article}', [HomeController::class, 'show'])->name('article.show');
+Route::post('/comment', [HomeController::class, 'store'])->name('comment.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth'])
+    ->name('dashboard');
+Route::get('/dashboard/article', [CRUDarticle::class, 'show'])->name('list');
+Route::get('/dashboard/articledelete/{article}', [CRUDarticle::class, 'destroy'])->name('article.delete');
+Route::get('/dashboard/articlemodify/{article}', [CRUDarticle::class, 'update'])->name('article.update');
+Route::post('/dashboard/articlesave', [CRUDarticle::class, 'save'])->name('article.save');
+
+
 
 require __DIR__.'/auth.php';
