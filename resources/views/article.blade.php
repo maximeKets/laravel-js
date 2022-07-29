@@ -26,7 +26,7 @@
         </div>
     @endif
 
-        <form class="w-full max-w-sm" method="post" action="{{ route('comment.store')}}">
+        <form class="w-full max-w-sm" method="post" action="{{route('comment.store')}}">
             @csrf
             @guest
             <div class="md:flex md:items-center mb-6">

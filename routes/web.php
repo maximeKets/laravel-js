@@ -26,7 +26,7 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/article', [CRUDarticle::class, 'show'])->name('list');
 Route::get('/dashboard/articledelete/{article}', [CRUDarticle::class, 'destroy'])->name('article.delete');
 Route::get('/dashboard/articlemodify/{article}', [CRUDarticle::class, 'update'])->name('article.update');
-Route::post('/dashboard/articlesave', [CRUDarticle::class, 'save'])->name('article.save');
+Route::post('dashboard/articlesave/{article}', [CRUDarticle::class, 'save'])->name('article.save');
 
 
 
