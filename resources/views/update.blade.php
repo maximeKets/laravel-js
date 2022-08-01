@@ -51,6 +51,22 @@
                         </button>
                     </div>
                 </form>
+                <br/>
+                <h2 class="text-2xl text-center m-10">Commentaires</h2>
+                <div>
+                    @foreach($article->comments as $comment)
+                        @if($comment->guest_pseudo)
+                        <div> Ecris par : {{$comment->guest_pseudo}}</div>
+                        @else
+                            <div> Ecris par : {{$comment->user->firstname}}</div>
+                        @endif
+                       <div>{{ Str:: limit($comment->content , 100)}}
+                           <a href="{{'/dashboard/commentmodify/'.$comment->id}}" class="text-green-600 font-bold py-2 px-4"> Modifier</a>
+                           <a href="{{'/dashboard/commentdelete/'.$comment->id}}" class="text-red-600 font-bold py-2 px-4"> Supprimer</a>
+                       </div>
+                        <br/>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
