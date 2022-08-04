@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\ApiController;
-use App\Http\Controllers\CRUDarticle;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CRUDarticle;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,11 +34,14 @@ Route::get('/dashboard/article', [CRUDarticle::class, 'show'])->name('list');
 Route::get('/dashboard/articledelete/{article}', [CRUDarticle::class, 'destroy'])->name('article.delete');
 Route::get('/dashboard/articlemodify/{article}', [CRUDarticle::class, 'update'])->name('article.update');
 Route::post('dashboard/articlesave/{article}', [CRUDarticle::class, 'save'])->name('article.save');
+Route::post('dashboard/articlecreate/', [CRUDarticle::class, 'create'])->name('article.create');
 
 Route::get('/dashboard/commentdelete/{comment}', [CommentController::class, 'destroy'])->name('comment.delete');
 Route::get('/dashboard/commentmodify/{comment}', [CommentController::class, 'show'])->name('comment.update');
-Route::post('dashboard/commentesave/{comment}', [CommentController::class, 'save'])->name('comment.save');
+Route::post('/dashboard/commentesave/{comment}', [CommentController::class, 'save'])->name('comment.save');
 
+//en JS
+Route::view('/js','indexjs')->name('home');
 
 
 require __DIR__.'/auth.php';

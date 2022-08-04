@@ -40,9 +40,9 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input name="content" maxlength="2000" required
+                            <input name="contents" maxlength="2000" required
                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                                   type="text" value="{{ old('content', $article->content) }}">
+                                   type="text" value="{{ old('contents', $article->content) }}">
                         </div>
                     </div>
                     <div>
