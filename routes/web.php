@@ -41,7 +41,9 @@ Route::get('/dashboard/commentmodify/{comment}', [CommentController::class, 'sho
 Route::post('/dashboard/commentesave/{comment}', [CommentController::class, 'save'])->name('comment.save');
 
 //en JS
-Route::view('/js','indexjs')->name('home');
+Route::view('/js','indexjs')->name('js.home');
+Route::view('/js/{id}','articlejs')->name('js.article');
+
 
 
 require __DIR__.'/auth.php';
